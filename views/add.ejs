@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>add</title>
+</head>
+
+<style>
+   body{
+    background-color: palevioletred;
+    text-align: center;
+    
+}
+#form{
+    color: rgb(206, 33, 33);
+    border: solid plum 1px;
+    margin: 0 auto; 
+    width:100%;
+    display: inline-block;
+    text-align: center;
+    border-radius: 5px;
+    background-color: rgb(102, 101, 94);
+    padding: 150px;
+}
+
+  input {
+    text-align: right;
+    width: 30%;
+    padding-right: 20px;
+   }
+   #em{
+    text-align: right;
+    width: 30%;
+    padding-right: 20px;
+   }
+   
+#btn{
+    color: wheat;
+    background-color: rgb(82, 66, 226);
+    padding: 5px;
+    margin-left: 4%;
+    text-align: center;
+    width: 20%;
+    
+
+}
+h1{
+   text-align: center;
+   color: brown;
+}
+</style>
+
+<body>
+   <h1>add form</h1>
+  <form action="/"  method="POST">
+    <p>
+        <label >id</label>
+        <input type="number" name=id>
+     </p>
+    
+     <p>
+        <label > fournisseur</label>
+        <input type="text" name=username>
+     </p>
+     <p>
+        <label >produit</label>
+        <input type="text" name=content_name>
+     </p>
+    
+     <p>
+      <label >numrayon </label>
+      <input type="text" name=content>
+   </p>
+  
+     
+     <input type="submit" name="add" id="btn" value="submit">
+      
+     </form>
+</body>
+</html>
