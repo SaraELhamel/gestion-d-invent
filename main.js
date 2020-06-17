@@ -1,8 +1,5 @@
 const express = require('express');
 const app = express();
-// const router = express.Router();
-// var addRouter = require('/routes/add');
-// app.use('/add',addRouter);
   const path = require('path');
   app.use(express.static(path.join(__dirname,"style")));
   var bodyParser = require('body-parser');
@@ -11,10 +8,7 @@ const app = express();
   app.get('/', function(req, res) {
     res.render('add');
 });
-app.post('/',function(req,res)
-{
-  console.log(req.body.data);
-});
+
 
 var mysql      = require('mysql');
   var connection = mysql.createConnection({
@@ -34,7 +28,23 @@ var mysql      = require('mysql');
           console.log('Connected :D');
      }
  });
+ app.post('/', urlencodedParser, function(req, res) {
+  const produit = {}
+  
+  produit.id = req.body.id 
+produit.fournisseur = req.body.fournisseur 
+  produit.produit = req.body.produit
+  produit.numrayon = req.body.numrayon
  
+
+  connection.query('INSERT INTO produit SET ?', produit, (err, res) => {
+     if(err) throw err;
+
+
+  // });
+  res.render('add');
+
+});
  
  
  connection.query('SELECT * FROM produit', (err,result,fields) => {
@@ -60,12 +70,12 @@ var mysql      = require('mysql');
      console.log(`Changed ${result.changedRows} row(s)`);
    }
  );
-connection.query(
-  'DELETE FROM produit WHERE id = ?', [8], (err, result) => {
-    if (err) throw err;
-    console.log(`Deleted ${result.affectedRows} row(s)`);
-  }
-);
+ connection.query(
+   'DELETE FROM produit WHERE id = ?', [99], (err, result) => {
+     if (err) throw err;
+     console.log(`Deleted ${result.affectedRows} row(s)`);
+   }
+ );
 
 app.listen(process.env.port || 3000,function(){
     console.log('now listening for request');
