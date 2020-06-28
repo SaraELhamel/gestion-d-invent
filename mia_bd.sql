@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 17 juin 2020 à 21:00
+-- Généré le : Dim 28 juin 2020 à 21:07
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.2.30
 
@@ -29,18 +29,22 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `fournisseur` (
   `id` int(1) NOT NULL,
-  ` fournisseur` text NOT NULL,
-  `produit` text NOT NULL,
-  `numrayon` int(1) NOT NULL,
-  `nombrproduit` int(4) NOT NULL
+  `name` text NOT NULL,
+  `email` text NOT NULL,
+  `téléphone` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `fournisseur`
 --
 
-INSERT INTO `fournisseur` (`id`, ` fournisseur`, `produit`, `numrayon`, `nombrproduit`) VALUES
-(2, 'jaouda', 'yagought', 12, 67);
+INSERT INTO `fournisseur` (`id`, `name`, `email`, `téléphone`) VALUES
+(2, 'jaouda', 'jaouda@email.com', 567889034),
+(78, 'Milka', 'Milka@gmail.com', 566748930),
+(8, 'lina', 'lina@gmail.com', 566748989),
+(81, 'slaoui', 'slaoui@gmail.com', 560748989),
+(11, 'safia', 'safia@email.com', 5678889),
+(13, 'Alaya', 'Alaya@gmail.com', 5678324);
 
 -- --------------------------------------------------------
 
@@ -60,11 +64,12 @@ CREATE TABLE `produit` (
 --
 
 INSERT INTO `produit` (`id`, `produit`, `fournisseur`, `numrayon`) VALUES
-(3, 'lait', 'jaouda', 23),
-(5, 'poisson', 'marssa', 21),
-(9, 'framboise', 'jirla', 30),
+(9, 'crème', 'lina', 7),
 (2, 'sandales', 'slaoui', 44),
-(6, 'miel', 'safia', 89);
+(6, 'miel', 'safia', 89),
+(4, 'botte', 'Alaya', 66),
+(12, 'chocolat', 'Milka', 90),
+(19, 'lait', 'jaouda', 7);
 
 -- --------------------------------------------------------
 
@@ -75,19 +80,20 @@ INSERT INTO `produit` (`id`, `produit`, `fournisseur`, `numrayon`) VALUES
 CREATE TABLE `rayon` (
   `id` int(1) NOT NULL,
   `produit` text NOT NULL,
-  `fournisseur` text NOT NULL,
-  `numrayon` int(1) NOT NULL
+  `catégorie` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `rayon`
 --
 
-INSERT INTO `rayon` (`id`, `produit`, `fournisseur`, `numrayon`) VALUES
-(3, 'fromage', 'Milka', 23),
-(45, 'beurre', 'Jibal', 12),
-(12, 'yagought', 'jaouda', 16),
-(2, 'jupe', 'marwa', 23);
+INSERT INTO `rayon` (`id`, `produit`, `catégorie`) VALUES
+(14, 'chocolat', 'biscuiterie'),
+(15, 'miel', 'sucrerie'),
+(16, 'sandales', 'chaussures'),
+(17, 'crème', 'beauté'),
+(18, 'botte', 'chaussures'),
+(20, 'lait', 'laiterie');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
