@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product</title> 
+</head>
+<style>
+  body{
+    background-color: pink;
+  }
+  table, th, td {
+  border:  solid brown;
+  padding: 15px;
+}
+table {
+  width: 90%;
+  margin: auto;
+}
+
+th {
+  text-align: center;
+}
+h1{
+  color: brown;
+  text-align: center;
+}
+</style>
+<body>
+  <h1>Products Table</h1>
+  <% produit.forEach(function(row){ %>
+    <table >
+      <tr>
+        <th>ID</th>
+        <th>Fournisseur</th>
+        <th>Produit</th>
+        <th>Rayon</th>
+      </tr>
+      <tr>
+        <th><%= row.id %></th>
+        <th><%= row.fournisseur %></th>
+        <th><%= row.produit %></th>
+        <th><%= row.numrayon %></th>
+      </tr>
+    </table>
+  <% }); %>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>provider</title>
+</head>
+<style>
+  body{
+    background-color: pink;
+  }
+  table, th, td {
+  border:  solid brown;
+  padding: 15px;
+}
+table {
+    text-align: center;
+    margin: auto;
+  width: 90%;
+}
+th {
+  text-align: center;
+}
+h1{
+    text-align: center;
+    color: brown;
+};
+</style>
+<body>
+  <h1>Provider Table</h1>
+  <% fournisseur.forEach(function(row){ %>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>name</th>
+        <th>email</th>
+        <th>téléphone</th>
+      </tr>
+      <tr>
+        <td><%= row.id %></td>
+        <td><%= row.name %></td>
+        <td><%= row.email %></td>
+        <td><%= row.téléphone %></td>
+      </tr>
+    </table>
+  <% }); %>
+</body>
+</html>
